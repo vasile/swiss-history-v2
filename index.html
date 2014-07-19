@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+    <head>
+        <title>Accession timeline of the cantons to the Swiss Confederation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        
+        <meta property="og:title" content="Accession timeline of the cantons to the Swiss Confederation"/>
+        <meta property="og:type" content="non_profit"/>
+        <meta property="og:url" content="http://maps.vasile.ch/swiss-history-v2/"/>
+        <meta property="og:image" content="http://maps.vasile.ch/swiss-history-v2/static/images/embed_social_300px.jpg"/>
+        
+        <!-- http://www.iconarchive.com/show/flags-icons-by-iconscity/switzerland-icon.html -->
+        <link href="static/images/favicon.ico" rel="shortcut icon" />
+        
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />        
+        <link rel="stylesheet" href="static/jquery-ui-extensions/jquery.ui.labeledslider.css">
+
+        <link href="static/page.css" rel="stylesheet" />
+    </head>
+
+    <body role="document">
+        <div id="github_badge">
+            <a href="https://github.com/vasile/swiss-history-v2" target="_blank"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+        </div>
+        
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="http://www.vasile.ch">maps.vasile.ch</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="http://en.wikipedia.org/wiki/History_of_Switzerland#Order_of_accession_of_the_cantons" target="_blank">Data source</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.google.com/forms/d/1ZWCqfF8OvRBlMPHMc5FbL6T3zYhQ-p18B8IIwMt1sRs/viewform" target="_blank">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2 class="text-center">Accession of the cantons to the Swiss Confederation</h2>
+            
+            <div id="social">
+                <div>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Accession timeline of the swiss cantons" data-lang="en">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+                <div>
+                    <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmaps.vasile.ch%2Fswiss-history-v2%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+                </div>
+                <div>
+                    <g:plusone size="medium"></g:plusone>
+                    <script type="text/javascript">
+                      (function() {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                      })();
+                    </script>
+                </div>
+            </div>
+            
+            <div id="map_canvas_wrapper">
+                <div id="map_canvas">
+                    <div id="map_area_info" class="ol-popup hide">
+                        <a href="#" class="ol-popup-closer"></a>
+                        <div class="ol-popup-content"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 id="event"></h4>
+            <div id="notes_block">
+                <span id="notes"></span>Read more on <a id="more_info_link" target="_blank">Wikipedia</a>.
+            </div>
+            <div id="timeline_wrapper">
+                <div id="timeline"></div>
+            </div>
+            
+            <hr/>
+            
+            <footer>
+                <div>Created by <a href="http://www.vasile.ch">Vasile Coțovanu</a> based on <a href="http://en.wikipedia.org/wiki/History_of_Switzerland#Order_of_accession_of_the_cantons" target="_blank">Wikipedia</a> datasources. The source code of the project is available on <a href="https://github.com/vasile/swiss-history-v2" target="_blank">Github</a>.</div>
+            </footer>
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        
+        <script src="http://api3.geo.admin.ch/loader.js?lang=en&amp;mode=debug"></script>
+        
+        <script src="static/jquery-ui-extensions/jquery.ui.labeledslider.js"></script>
+        <script src="static/jquery-ui-extensions/jquery.ui.touch-punch.min.js"></script>
+        
+        <script src="static/page.js"></script>
+    </body>
+</html>
