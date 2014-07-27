@@ -4,13 +4,28 @@ $(document).ready(function() {
         $('body').addClass('mobile');
     }
     
+    var layers = []
+
+    var layer = null;
+    
+    layer = ga.layer.create('ch.swisstopo.hiks-dufour');
+    layer.setOpacity(1);
+    layers.push(layer);
+    
+    layer = ga.layer.create('ch.swisstopo.swissalti3d-reliefschattierung');
+    layer.setOpacity(0.2);
+    layers.push(layer);
+    
+    var colormap_layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
+    colormap_layer.setVisible(false);
+    layers.push(colormap_layer);
+    
     var areas_layer = new ol.layer.Vector({
         source: new ol.source.GeoJSON(),
         opacity: 0.7
     });
-    
-    var base_layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
-    base_layer.setOpacity(0.9);
+    areas_layer.set('layer_id', 'areas');
+    layers.push(areas_layer);
     
     var area_info = new ol.Overlay({
         element: $('#map_area_info')[0]
@@ -18,7 +33,7 @@ $(document).ready(function() {
     
     var map = new ga.Map({
         target: 'map_canvas',
-        layers: [base_layer, areas_layer],
+        layers: layers,
         view: new ol.View2D({
             resolution: 500,
             center: ol.proj.transform([8.25,46.8], 'EPSG:4326', 'EPSG:21781')
@@ -28,7 +43,6 @@ $(document).ready(function() {
     
     map.on('click', function(ev) {
         var feature_selected = null;
-        
         map.forEachFeatureAtPixel(ev.pixel, function(feature, layer) {
             feature_selected = feature;
         });
@@ -128,6 +142,17 @@ $(document).ready(function() {
                         }
                     }
                 });
+                
+                // Last event
+                if (k === (data.length - 1)) {
+                    if (colormap_layer.getVisible() === false) {
+                        colormap_layer.setVisible(true);
+                    }
+                } else {
+                    if (colormap_layer.getVisible()) {
+                        colormap_layer.setVisible(false);
+                    }
+                }
             }
 
             var labels = [];
