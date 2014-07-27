@@ -48,7 +48,7 @@ $(document).ready(function() {
         return false;
     });
     
-    $.getJSON('static/json/geometries.json', function(data) {
+    $.getJSON('static/json/geometries.geojson', function(data) {
         $.each(data.features, function(k, geojson_feature) {
             var polygon_coordinates = null;
             
