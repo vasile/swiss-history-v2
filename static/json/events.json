@@ -30,7 +30,7 @@
         "title": "Bern joins the Swiss Confederation",
         "notes": "In 1815 Jura was given to Bern but in 1978 split and joined the confederation in 1979",
         "link": "http://en.wikipedia.org/wiki/History_of_Bern#Old_Swiss_Confederacy",
-        "add": ["BE"]
+        "add": ["BE_PLUS_JU"]
     },
     {
         "date": "1481",
@@ -68,6 +68,7 @@
         "date": "1979",
         "title": "Jurassic separatism",
         "link": "http://en.wikipedia.org/wiki/Jurassic_separatism",
-        "add": ["JU"]
+        "add": ["BE","JU"],
+        "remove": ["BE_PLUS_JU"]
     }
 ]
