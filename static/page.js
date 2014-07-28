@@ -35,6 +35,7 @@ $(document).ready(function() {
     });
     
     var map = new ga.Map({
+        tooltip: false,
         target: 'map_canvas',
         layers: layers,
         view: new ol.View2D({
