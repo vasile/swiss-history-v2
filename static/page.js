@@ -106,8 +106,8 @@ $(document).ready(function() {
                     color: '#' + (Math.random()*0xFFFFFF<<0).toString(16)
                 }),
                 stroke: new ol.style.Stroke({
-                    color: '#808080',
-                    width: 1
+                    color: '#000000',
+                    width: 2
                 })
             });
             feature.setStyle(function(resolution) {
