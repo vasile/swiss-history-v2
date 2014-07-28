@@ -23,9 +23,6 @@ $(document).ready(function() {
     colormap_layer.setVisible(false);
     layers.push(colormap_layer);
     
-    var layer = ga.layer.create('ch.swisstopo.swissboundaries3d-land-flaeche.fill');
-    layers.push(layer);
-    
     var areas_layer = new ol.layer.Vector({
         source: new ol.source.GeoJSON(),
         opacity: 0.7
