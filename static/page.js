@@ -8,9 +8,12 @@ $(document).ready(function() {
 
     var layer = null;
     
-    layer = ga.layer.create('ch.swisstopo.hiks-dufour');
-    layer.setOpacity(1);
-    layers.push(layer);
+    var dufour_layer = ga.layer.create('ch.swisstopo.hiks-dufour');
+    dufour_layer.setVisible(false);
+    layers.push(dufour_layer);
+    
+    var grey_layer = ga.layer.create('ch.swisstopo.pixelkarte-grau');
+    layers.push(grey_layer);
     
     layer = ga.layer.create('ch.swisstopo.swissalti3d-reliefschattierung');
     layer.setOpacity(0.2);
@@ -58,6 +61,29 @@ $(document).ready(function() {
             $('#map_area_info').removeClass('hide');
         } else {
             $('#map_area_info').addClass('hide');
+        }
+    });
+    
+    map.on('moveend', function(ev) {
+        var resolution = map.getView().getResolution();
+        var is_detailed_zoom_level = resolution <= 20;
+        
+        if (is_detailed_zoom_level) {
+            if (dufour_layer.getVisible() === false) {
+                dufour_layer.setVisible(true);
+            }
+            
+            if (grey_layer.getVisible()) {
+                grey_layer.setVisible(false);
+            }
+        } else {
+            if (dufour_layer.getVisible()) {
+                dufour_layer.setVisible(false);
+            }
+            
+            if (grey_layer.getVisible() === false) {
+                grey_layer.setVisible(true);
+            }
         }
     });
     
