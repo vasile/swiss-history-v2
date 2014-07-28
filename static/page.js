@@ -25,7 +25,7 @@ $(document).ready(function() {
     
     var areas_layer = new ol.layer.Vector({
         source: new ol.source.GeoJSON(),
-        opacity: 0.7
+        opacity: 0.3
     });
     areas_layer.set('layer_id', 'areas');
     layers.push(areas_layer);
